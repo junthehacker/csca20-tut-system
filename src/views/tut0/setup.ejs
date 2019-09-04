@@ -1,0 +1,21 @@
+<% include ../partials/head.ejs %>
+
+    <div class="container pt-2">
+        <h1>Team Information</h1>
+        <h4>You are in <%= tutorial.name %></h4>
+        <p>This activity must be completed in pairs, so if you don't have a teammate yet, go find one!</p>
+        <p>Once you have found your teammate, enter both UTORids below. UTORid is the username that you use to login to Quercus, please make sure you enter it correctly.</p>
+
+        <form method="post">
+            <label>UTORid #1</label>
+            <input class="form-control" name="username1" />
+            <br/>
+            <label>UTORid #2</label>
+            <input class="form-control" name="username2" />
+            <input type="hidden" value="<%= tutorial._id %>" name="tutorialId" />
+            <br/>
+            <button class="btn btn-primary">Start</button>
+        </form>
+    </div>
+
+<% include ../partials/foot.ejs %>
