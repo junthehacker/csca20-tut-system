@@ -1,0 +1,20 @@
+<% include ../partials/head.ejs %>
+
+<div class="container pt-2">
+    <% include ../partials/pairSessionInfo.ejs %>
+    <h2>Lab 0 Question Set</h2>
+    <% for(let i = 0; i < questions.length; i++) { %>
+        <div>
+            <hr/>
+            <div>
+                <h4><%= questions[i].title %></h4>
+                <p>No answer.</p>
+            </div>
+            <a href="<%= absRoute(`/tut0/questions/${i}`) %>">
+                <button class="btn btn-primary">Go</button>
+            </a>
+        </div>
+    <% } %>
+</div>
+
+<% include ../partials/foot.ejs %>

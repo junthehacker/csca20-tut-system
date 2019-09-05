@@ -19,10 +19,13 @@
   "homepage": "https://github.com/junthehacker/csca20-tut-system#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.4",
     "dotenv": "^8.1.0",
     "ejs": "^2.7.1",
     "express": "^4.17.1",
     "express-boom": "^3.0.0",
+    "express-session": "^1.16.2",
     "mongoose": "^5.6.12"
   },
   "devDependencies": {

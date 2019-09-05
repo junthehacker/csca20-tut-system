@@ -1,0 +1,10 @@
+<hr/>
+<h4>Choose your answer:</h4>
+<select>
+    <option value="-1">-- Choose an option --</option>
+    <% for(let i = 0; i < question.choices.length; i++) { %>
+        <option value="<%= i %>"><%= question.choices[i] %></option>
+    <% } %>
+</select>
+<br/><br/>
+<button class="btn btn-primary">Submit</button>
