@@ -10,6 +10,7 @@ const TEMPLATE_HEAD = `
 
 <div class="container pt-2">
     <% include ../partials/questionNav.ejs %>
+    <% include ../partials/pairSessionInfo.ejs %>
 `;
 
 const TEMPLATE_TAIL = `

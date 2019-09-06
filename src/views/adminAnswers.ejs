@@ -1,0 +1,25 @@
+<% include partials/head.ejs %>
+
+<div class="container pt-2">
+    <h1>Hi, <%= user.username %>!</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Question ID</th>
+            <th scope="col">Answer</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% for(const key in JSON.parse(session.responses)) { %>
+            <tr>
+                <td><%= key %></td>
+                <td><%= JSON.parse(session.responses)[key] %></td>
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
+
+</div>
+
+<% include partials/foot.ejs %>

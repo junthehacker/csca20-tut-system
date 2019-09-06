@@ -1,0 +1,31 @@
+<% include partials/head.ejs %>
+
+<div class="container pt-2">
+    <h1>Hi, <%= user.username %>!</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Member 1</th>
+            <th scope="col">Member 2</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% for(const session of sessions) { %>
+            <tr>
+                <td><%= session.username1 %></td>
+                <td><%= session.username2 %></td>
+                <td>
+                    <a href="<%= absRoute(`/admin/${session._id}`) %>">
+                        <button class="btn btn-primary">View Answers</button>
+                    </a>
+                </td>
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
+
+</div>
+
+<% include partials/foot.ejs %>

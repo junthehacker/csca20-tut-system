@@ -10,15 +10,23 @@ const pairSessionSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        tutorial: {
-            type: mongoose.SchemaTypes.ObjectId,
-            ref: 'Tutorial',
-            required: true,
+        responses: {
+            type: String,
+            default: "{}"
         },
+        score: {
+            type: Number,
+            default: 0
+        }
     },
     {
         timestamps: true
     }
 );
+
+pairSessionSchema.methods.getResponse = function(i) {
+    return JSON.parse(this.responses)[i];
+};
+
 
 module.exports = mongoose.model('PairSession', pairSessionSchema);
