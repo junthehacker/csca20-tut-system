@@ -37,14 +37,14 @@ app.use(bodyParser.json());
 
 app.get(absRoute('/admin'), [ensureAuthenticated, async (req, res) => {
     if(req.user.groups.indexOf("admin") < 0) {
-        return res.redirect("/tut0");
+        return res.redirect(absRoute("/tut0"));
     }
     res.render('admin', {user: req.user, sessions: await PairSessionService.getAll(), absRoute});
 }]);
 
 app.get(absRoute(`/admin/:sessionId`), [ensureAuthenticated, async (req, res) => {
     if(req.user.groups.indexOf("admin") < 0) {
-        return res.redirect("/tut0");
+        return res.redirect(absRoute("/tut0"));
     }
     const session = await PairSessionService.getOneByIdOrFail(req.params.sessionId);
     res.render('adminAnswers', {user: req.user, sessions: await PairSessionService.getAll(), absRoute, session});
@@ -99,7 +99,7 @@ for (let i = 0; i < TutZeroQuestions.length; i++) {
 // IA
 app.get(absRoute('/ia/assert'), withErrorHandler(async (req, res) => {
     req.session.iaToken = req.query.token;
-    res.redirect('/tut0');
+    res.redirect(absRoute('/tut0'));
 }));
 
 app.listen(process.env.PORT, () => {
