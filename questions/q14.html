@@ -1,0 +1,82 @@
+<!--This is the template where you write your questions. You have access to a few libraries:-->
+<!--* jQuery-->
+<!--* Vue.js-->
+<!--Everything must run within the same page. Do not redirect or link to anywhere else.-->
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Question Demo</title>
+</head>
+<body>
+
+<!--        START ADDING YOUR CODE HERE-->
+
+<style>
+    .output-box {
+        width: 50px;
+        height: 50px;
+    }
+</style>
+
+
+<div id="q14" class="container pt-2">
+    <h1>Question 14</h1>
+
+    <p>Click on the button below to get the output. It might change depending on what you have selected:</p>
+    <select id="courses" name="courses">
+      <option value="A1">ANTA02</option>
+      <option value="O1">ANTB16</option>
+      <option value="A2">BIOA01</option>
+      <option value="O2">CHMB16</option>
+      <option value="A3">CSCA20</option>
+      <option value="O3">CSCB20</option>
+      <option value="A4">IDSA02</option>
+      <option value="O4">IDSD01</option>
+      <option value="A5">MATA02</option>
+      <option value="O5">MATD16</option>
+      <option value="O6">MGEB02</option>
+      <option value="A6">MGTA01</option>
+      <option value="A7">PSYA01</option>
+      <option value="O7">PSYB20</option>
+      <option value="O8">SOCB35</option>
+      <option value="O9">SOCC11</option>
+      <option value="O10">STAB22</option>
+      <option value="O11">STAB52</option>
+      <option value="A8">WSTA03</option>
+      <option value="012">WSTB11</option>
+    </select>
+
+    <button onclick="checkList()">?</button>
+    <p> Output: <output id="answ"></output> </p>
+
+      <label>Type your answer here:</label>
+      <input type="text" v-model="input" class="form-control" />
+
+</div>
+
+<script>
+function checkList() {
+  var selection = document.getElementById("courses").value;
+  if (selection == "A1" | selection == "A2" |
+  selection == "A3" | selection == "A4" |
+  selection == "A5" | selection == "A6" |
+  selection == "A7" | selection == "A8"){
+    document.getElementById("answ").innerHTML = "true";
+  }
+  else{
+    document.getElementById("answ").innerHTML = "false";
+  }
+}
+</script>
+
+
+
+<!--        STOP HERE-->
+
+</body>
+</html>
