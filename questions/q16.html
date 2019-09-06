@@ -1,0 +1,66 @@
+<!--This is the template where you write your questions. You have access to a few libraries:-->
+<!--* jQuery-->
+<!--* Vue.js-->
+<!--Everything must run within the same page. Do not redirect or link to anywhere else.-->
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Question Demo</title>
+</head>
+<body>
+
+<!--        START ADDING YOUR CODE HERE-->
+
+<style>
+    .output-box {
+        width: 50px;
+        height: 50px;
+    }
+</style>
+
+<script>
+function checkBoxes() {
+  var box1 = document.getElementById("myCheck1").checked;
+  var box2 = document.getElementById("myCheck2").checked;
+  var box3 = document.getElementById("myCheck3").checked;
+  var box4 = document.getElementById("myCheck4").checked;
+  var box5 = document.getElementById("myCheck5").checked;
+  var box6 = document.getElementById("myCheck6").checked;
+  var x = ~box1 & box2 & ~box3 & ~box4 & ~box5 & box6;
+  var y = ~box1 & ~box2 & box3 & ~box4 & box5 & ~box6;
+  var z = ~box1 & ~box2 & ~box3 & box4 & ~box5 & ~box6;
+  document.getElementById("answ").innerHTML = !!(x | y | z);
+}
+</script>
+
+<div id="q16" class="container pt-2">
+    <h1>Question 16</h1>
+
+    <p>Click on the button below to get the output. It might change depending on what you have selected:</p>
+    <p> <input type="checkbox" id="myCheck1"> 5</p>
+    <p> <input type="checkbox" id="myCheck2"> 9</p>
+    <p> <input type="checkbox" id="myCheck3"> 4</p>
+    <p> <input type="checkbox" id="myCheck4"> 10</p>
+    <p> <input type="checkbox" id="myCheck5"> 6</p>
+    <p> <input type="checkbox" id="myCheck6"> 1</p>
+
+    <p> <button onclick="checkBoxes()">Check!</button> </p>
+
+    <p> Output: <output id="answ"></output> </p>
+
+      <label>Type your answer here:</label>
+      <input type="text" v-model="input" class="form-control" />
+
+</div>
+
+
+
+<!--        STOP HERE-->
+
+</body>
+</html>

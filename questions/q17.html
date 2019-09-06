@@ -23,44 +23,40 @@
     }
 </style>
 
-<div id="q0" class="container pt-2">
+<script>
+
+
+function checkDate() {
+  var datePicked = new Date(document.getElementById("selection").value);
+  var current = new Date();
+  var one_day=1000*60*60*24;
+  var diff_ms = current.getTime() - datePicked.getTime();
+  var diff = Math.round(diff_ms/one_day);
+
+  if (diff >= 6575){
+    document.getElementById("answ").innerHTML = "true";
+  } else {
+    document.getElementById("answ").innerHTML = "false";
+  }
+}
+</script>
+
+<!-- Safari and IE (v. 11 or earlier) do not support the datepicker, but that should not be
+an issue because labs are in-class and we can ask everyone to use Chrome or Firefox -->
+
+<div id="q17" class="container pt-2">
+    <h1>Question 17</h1>
+
+    <p>Click on the button below to get the output. It might change depending on what you have selected:</p>
+    <p> <input type="date" id="selection"> <button onclick="checkDate()">?</button> <p>
+
+    <p> Output: <output id="answ"></output> </p>
 
     <label>Type your answer here:</label>
     <input type="text" v-model="input" class="form-control" />
 
-    <label>Output:</label>
-    <div class="output-box" v-bind:style="{ backgroundColor: getTransformedColour() }"></div>
 </div>
 
-<script>
-
-    const app = new Vue({
-        el: "#q0",
-        data: {
-            input: "",
-        },
-        methods: {
-            getTransformedColour() {
-                let r = 0;
-                let g = 0;
-                let b = 0;
-                for(let i = 0; i < this.input.length; i++) {
-                    const charCode = this.input.charCodeAt(i);
-                    r += Math.abs((charCode % 2 - 2) * 100 / charCode);
-                    g += i * 0.2;
-                    b += charCode;
-                }
-
-                r = Math.min(255, r);
-                g = Math.min(255, g);
-                b = Math.min(255, b);
-
-                return `rgb(${Math.floor(r)}, ${Math.floor(g)}, ${Math.floor(b)})`;
-            }
-        }
-    })
-
-</script>
 
 
 <!--        STOP HERE-->
