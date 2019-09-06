@@ -1,20 +1,10 @@
-<!--This is the template where you write your questions. You have access to a few libraries:-->
-<!--* jQuery-->
-<!--* Vue.js-->
-<!--Everything must run within the same page. Do not redirect or link to anywhere else.-->
-<!doctype html>
-<html lang="en">
-<head>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <title>Question Demo</title>
-</head>
-<body>
 
-<!--        START ADDING YOUR CODE HERE-->
+<!-- This is generated code, please do not change!!! -->
+<% include ../partials/head.ejs %>
+
+<div class="container pt-2">
+    <% include ../partials/questionNav.ejs %>
+
 
 <style>
     .output-box {
@@ -65,7 +55,8 @@ an issue because labs are in-class and we can ask everyone to use Chrome or Fire
 
 
 
-<!--        STOP HERE-->
 
-</body>
-</html>
+    <% include ../partials/questionChoices.ejs %>
+</div>
+
+<% include ../partials/foot.ejs %>

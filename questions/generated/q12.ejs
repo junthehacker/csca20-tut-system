@@ -1,0 +1,44 @@
+
+<!-- This is generated code, please do not change!!! -->
+<% include ../partials/head.ejs %>
+
+<div class="container pt-2">
+    <% include ../partials/questionNav.ejs %>
+
+
+<style>
+    .output-box {
+        width: 50px;
+        height: 50px;
+    }
+</style>
+
+<script>
+function checkText() {
+  var box = document.getElementById("box").value;
+  var regex=/[aA]/;
+  if (box.match(regex)){
+    document.getElementById("answ").innerHTML = "true";
+  } else {
+    document.getElementById("answ").innerHTML = "false";
+  }
+}
+</script>
+
+<div id="q12">
+    <h1>Question 12</h1>
+
+    <p>Click on the button below to get the output. It might change depending on what you have entered:</p>
+    <input type="text" id="box"/>
+    <button onclick="checkText()">?</button>
+
+    <p> Output: <output id="answ"></output> </p>
+</div>
+
+
+
+
+    <% include ../partials/questionChoices.ejs %>
+</div>
+
+<% include ../partials/foot.ejs %>

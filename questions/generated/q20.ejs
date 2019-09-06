@@ -1,0 +1,47 @@
+
+<!-- This is generated code, please do not change!!! -->
+<% include ../partials/head.ejs %>
+
+<div class="container pt-2">
+    <% include ../partials/questionNav.ejs %>
+
+
+<style>
+    .output-box {
+        width: 50px;
+        height: 50px;
+    }
+</style>
+
+<script>
+function palindrome() {
+  var str = document.getElementById("box").value;
+  var re = /[\W_]/g;
+  var lowRegStr = str.toLowerCase().replace(re, '');
+  var reverseStr = lowRegStr.split('').reverse().join('');
+  if (reverseStr === lowRegStr){
+    document.getElementById("answ").innerHTML = "true";
+  } else {
+    document.getElementById("answ").innerHTML = "false";
+  }
+}
+</script>
+
+<div id="q20">
+    <h1>Question 20</h1>
+
+    <p>Click on the button below to get the output. It might change depending on what you have entered:</p>
+    <input type="text" id="box"/>
+    <button onclick="palindrome()">?</button>
+
+    <p> Output: <output id="answ"></output> </p>
+
+</div>
+
+
+
+
+    <% include ../partials/questionChoices.ejs %>
+</div>
+
+<% include ../partials/foot.ejs %>
