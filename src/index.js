@@ -31,7 +31,7 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 
-app.use(session({secret: 'keyboard cat'}));
+app.use(session({secret: 'keyboard cat', name: "csca20.sid"}));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
