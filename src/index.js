@@ -82,7 +82,7 @@ for (let i = 0; i < TutZeroQuestions.length; i++) {
     app.get(absRoute('/tut0/questions/' + i), [ensureAuthenticated, withErrorHandler(async (req, res) => {
         const session = await PairSessionService.getOneByUsername(req.user.username);
         if (!session) return res.redirect(absRoute('/tut0'));
-        res.render(question.path, {session, question});
+        res.render(question.path, {session, question, absRoute});
     })]);
 
     app.post(absRoute('/tut0/questions/' + i), [ensureAuthenticated, withErrorHandler(async (req, res) => {
