@@ -27,10 +27,10 @@
 function checkDate() {
   var datePicked = new Date(document.getElementById("selection").value);
   var current = new Date()
-  if (datePicked.getTime() > current.getTime()){
-    document.getElementById("answ").innerHTML = "false";
-  } else {
+  if (datePicked.getTime() <= current.getTime()){
     document.getElementById("answ").innerHTML = "true";
+  } else {
+    document.getElementById("answ").innerHTML = "false";
   }
 }
 </script>
