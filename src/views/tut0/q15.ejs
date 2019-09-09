@@ -18,7 +18,7 @@
 function checkText() {
   var box = document.getElementById("box").value;
   var regex=/^[0123456789]+$/;
-  if (box.match(regex)){
+  if (box.match(regex) && box.length == 5){
     document.getElementById("answ").innerHTML = "true";
   } else {
     document.getElementById("answ").innerHTML = "false";
