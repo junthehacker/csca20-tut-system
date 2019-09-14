@@ -31,7 +31,7 @@ app.get(absRoute('/admin'), [ensureAuthenticated, async (req, res) => {
 
 app.get(absRoute(`/admin/:sessionId`), [ensureAuthenticated, async (req, res) => {
     if (req.user.groups.indexOf("admin") < 0) {
-        return res.redirect(absRoute("/tut0"));
+        return res.redirect(absRoute("/tut1"));
     }
     const session = await PairSessionService.getOneByIdOrFail(req.params.sessionId);
     res.render('adminAnswers', {user: req.user, sessions: await PairSessionService.getAll(), absRoute, session});
@@ -40,11 +40,11 @@ app.get(absRoute(`/admin/:sessionId`), [ensureAuthenticated, async (req, res) =>
 // IA
 app.get(absRoute('/ia/assert'), withErrorHandler(async (req, res) => {
     req.session.iaToken = req.query.token;
-    res.redirect(absRoute('/tut0'));
+    res.redirect(absRoute('/tut1'));
 }));
 
 // Bind routes
-require('./routes/tut0')(app);
+// require('./routes/tut0')(app);
 require('./routes/tut1')(app);
 
 app.listen(process.env.PORT, () => {

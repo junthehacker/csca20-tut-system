@@ -1,0 +1,40 @@
+
+<!-- This is generated code, please do not change!!! -->
+<% include ../partials/head.ejs %>
+
+<div class="container pt-2">
+    <% include ../partials/questionNav.ejs %>
+    <% include ../partials/pairSessionInfo.ejs %>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Question</h3>
+
+<pre><code>
+"""
+Input: Person, money
+Output: Person, drink, money
+
+Ger a drink at a coffee shop.
+"""
+
+Enter to a coffee shop
+Wait in line
+if person is next in line:
+    select a drink
+    if drink is available:
+        order the drink
+    pay for the drink
+wait for the order to be ready
+if the order is ready:
+    grab the drink
+    exit the coffee shop
+
+</code></pre>
+
+    </div>
+        <% include partials/answerSection.ejs %>
+    </div>
+
+</div>
+
+<% include ../partials/foot.ejs %>

@@ -1,0 +1,19 @@
+<style>
+    .answer-textarea {
+        height: calc(100vh - 170px) !important;
+    }
+</style>
+
+<div class="col-md-6">
+    <h3>Your Answer</h3>
+    <form method="post" id="answer-form">
+        <textarea class="form-control answer-textarea" form="answer-form" name="response">
+<% if(!response) { %># Explain the error below
+
+The algorithm doesn't work because...
+
+# Write a fixed algorithm below
+<% } else { %><%= response %><% } %></textarea>
+        <button class="btn btn-primary mt-2">Submit</button>
+    </form>
+</div>
