@@ -9,7 +9,7 @@ module.exports = class PairSessionService {
      */
     static async getOneByIdOrFail(id) {
         const session = await PairSession.findOne({_id: id});
-        if(!session) {
+        if (!session) {
             throw new Error("Session with ID " + id + " cannot be found.");
         }
         return session;
@@ -23,10 +23,11 @@ module.exports = class PairSessionService {
      * Create a new pair session.
      * @param username1
      * @param username2
+     * @param activityName
      * @returns {Promise<void>}
      */
-    static async createPairSession(username1, username2) {
-        const session = new PairSession({username1, username2});
+    static async createPairSession(username1, username2, activityName = "") {
+        const session = new PairSession({username1, username2, activityName});
         await session.save();
         return session;
     }
@@ -39,6 +40,27 @@ module.exports = class PairSessionService {
                 },
                 {
                     username2: username,
+                }
+            ]
+        });
+        return session;
+    }
+
+    static async getOneByUsernameAndActivityName(username, activityName) {
+        const session = await PairSession.findOne({
+            $and: [
+                {
+                    $or: [
+                        {
+                            username1: username,
+                        },
+                        {
+                            username2: username,
+                        }
+                    ]
+                },
+                {
+                    activityName,
                 }
             ]
         });

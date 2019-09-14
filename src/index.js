@@ -45,6 +45,7 @@ app.get(absRoute('/ia/assert'), withErrorHandler(async (req, res) => {
 
 // Bind routes
 require('./routes/tut0')(app);
+require('./routes/tut1')(app);
 
 app.listen(process.env.PORT, () => {
     console.log(`Application started on port ${process.env.PORT}.`);

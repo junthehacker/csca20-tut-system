@@ -10,6 +10,9 @@ const pairSessionSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        activityName: {
+            type: String,
+        },
         responses: {
             type: String,
             default: "{}"
