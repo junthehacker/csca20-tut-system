@@ -1,5 +1,5 @@
 <!--This is the template where you write your questions. You have access to a few libraries:-->
-<!--This is for type A question, which should include an area to explain errors and an area to write fixed algorithm.-->
+<!--This is for type B question, which should include an area to write an algorithm.-->
 <!--* jQuery-->
 <!--* Vue.js-->
 <!--Everything must run within the same page. Do not redirect or link to anywhere else.-->
@@ -26,46 +26,30 @@
 <body>
 
 <div class="container pt-2">
-<!--        START ADDING YOUR CODE HERE-->
+    <!--        START ADDING YOUR CODE HERE-->
 
-<div class="row">
-    <div class="col-md-6">
-        <h3>Original Algorithm</h3>
-<pre><code>
-"""
-Input: Person, Driver's License, Car
-Output: Person, Car
-
-Check if a person is allowed to drive based on their driving
-license specifications.
-"""
-
-If the person has a valid driver's license:
-    let them drive
-If the person needs glasses to drive and is not wearing any:
-    do not let them drive
-If the person has a learner's license:
-    if the person is with an authorized driver:
-        do not let them drive
-    else:
-        let them drive
-</code></pre>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Description</h3>
+            <p>
+                Input: Smartphone, Toppings, Size, Address<br/>
+                Output: Pizza Order
+            </p>
+            <p>
+              An order should be placed to 'Ye Olde Harrington's Pizza and Haggis Shoppe' for a pizza of the specified Size, with all of the specified Toppings, to the specified address, using the Smartphone.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <h3>Your Algorithm</h3>
+            <textarea class="form-control answer-textarea">
+# Type your algorithm below</textarea>
+        </div>
     </div>
-    <div class="col-md-6">
-        <h3>Your Algorithm</h3>
-        <textarea class="form-control answer-textarea">
-# Explain the error below
 
-The algorithm doesn't work because...
-
-# Write a fixed algorithm below</textarea>
+    <!--        STOP HERE-->
+    <div class="control-bar">
+        <button class="btn btn-primary">Submit</button>
     </div>
-</div>
-
-<!--        STOP HERE-->
-<div class="control-bar">
-    <button class="btn btn-primary">Submit</button>
-</div>
 </div>
 
 </body>

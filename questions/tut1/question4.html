@@ -33,22 +33,22 @@
         <h3>Original Algorithm</h3>
 <pre><code>
 """
-Input: Person, Driver's License, Car
-Output: Person, Car
+Input: Person, Jacket, Umbrella, Gloves, Forecast
+Output: Person
 
-Check if a person is allowed to drive based on their driving
-license specifications.
+Person should appropriately don the correct garments and
+accessories for the weather Forecast.
 """
 
-If the person has a valid driver's license:
-    let them drive
-If the person needs glasses to drive and is not wearing any:
-    do not let them drive
-If the person has a learner's license:
-    if the person is with an authorized driver:
-        do not let them drive
-    else:
-        let them drive
+If Forecast has high change of rain:
+    If Forecast is windy:
+        Person doesn't take Umbrella
+    Person takes Umbrella
+If Forecast has temperatures below 10:
+    Person puts left arm into Jacket sleeve
+    Person puts right arm into otherJacket sleeve
+    Person zips up the jacket
+    Person puts one glove on each hand.
 </code></pre>
     </div>
     <div class="col-md-6">
