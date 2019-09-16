@@ -8,9 +8,7 @@
     <h3>Your Answer</h3>
     <form method="post" id="answer-form">
         <textarea class="form-control answer-textarea" form="answer-form" name="response">
-<% if(!response) { %># Explain the error below
-
-The algorithm doesn't work because...
+<% if(!response) { %># Explain below why the algorithm on the left doesn't work
 
 # Write a fixed algorithm below
 <% } else { %><%= response %><% } %></textarea>
