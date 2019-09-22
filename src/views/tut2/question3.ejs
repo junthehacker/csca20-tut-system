@@ -1,0 +1,28 @@
+
+<!-- This is generated code, please do not change!!! -->
+<% include ../partials/head.ejs %>
+
+<div class="container pt-2">
+    <% include ../partials/questionNav.ejs %>
+    <% include ../partials/pairSessionInfo.ejs %>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Question</h3>
+
+            <h5>Inputs</h5>
+            <p>age (integer 0-100), is_member (boolean), points on the card (integers 1-100000), day of the week (String).</p>
+            <h5>Outputs</h5>
+            <p>can_vote (boolean)</p>
+            <h5>Expected Behaviour</h5>
+            <p>Return the movie ticket price for the corresponding input.</p>
+            <p>- Customers age 14 and up are charged $15 base per ticket, while anyone younger is charged $10 base.</p>
+            <p>- Discounts can be applied using a card (100 points per dollar), up to a minimum price of $10. </p>
+            <p>- Members can receive a 10% discount on top of the previous discount but only on weekends. </p>
+            
+    </div>
+        <% include partials/answerSection.ejs %>
+    </div>
+
+</div>
+
+<% include ../partials/foot.ejs %>
