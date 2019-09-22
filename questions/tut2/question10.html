@@ -33,7 +33,7 @@
             <!--        START ADDING YOUR DESCRIPTION HERE-->
             <h1>Question 10</h1>
             <h5>Input</h5>
-            <p>grade (integer 0-100), Submission date (date), deadline (date)</p>
+            <p>grade (integer 0-100), Submission date (yyyy-mm-dd), deadline (yyyy-mm-dd)</p>
             <h5>Output</h5>
             <p> grade_with_penalty (integer 0-100)</p>
             <h5>Behaviour</h5>
@@ -64,7 +64,7 @@
                         <input class="form-control"/>
                     </td>
                     <td>
-                        <input class="form-control" v-bind:value="algorithm(...input.split(','))" disabled/>
+                        <input class="form-control" v-bind:value="algorithm(input)" disabled/>
                     </td>
                 </tr>
                 <tr>
@@ -90,8 +90,26 @@
         methods: {
             <!--        START ADDING YOUR CODE HERE-->
             // Please do not change the name of this function
-            algorithm(grade, talked_to_prof) {
-                return !!(grade >= 50 || talked_to_prof === "true");
+            algorithm(input) {
+              var no_space = input.split(' ').join('').toLowerCase();
+              var array_input = no_space.split(',');
+              if (input == "") {
+                return "";
+              }
+              var final_grade = array_input[0];
+              var sDate = array_input[1].split('-');
+              var dDate = array_input[2].split('-');
+              var diff = sDate[2] - dDate[2];
+              if (diff == -1){
+                final_grade = final_grade - (final_grade * 0.1);
+              } else if (diff == -2){
+                final_grade = final_grade - (final_grade * 0.2);
+              } else if (diff == -3){
+                final_grade = final_grade - (final_grade * 0.3);
+              } else if (diff < -3){
+                final_grade = 0;
+              }
+              return final_grade;
             }
             <!--        STOP HERE-->
         }

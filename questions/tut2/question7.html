@@ -33,11 +33,11 @@
             <!--        START ADDING YOUR DESCRIPTION HERE-->
             <h1>Question 7</h1>
             <h5>Input</h5>
-            <p>grade (integer 0-100), talked_to_prof (boolean)</p>
+            <p> has_quant, has_natsci, has_social, has_arts, has_history (booleans)</p>
             <h5>Output</h5>
-            <p>will_pass (boolean)</p>
+            <p>has_all (boolean)</p>
             <h5>Behaviour</h5>
-            <p>Return true if and only if a person will pass a course</p>
+            <p>Return true if and only if a person has all the required breadth requirements.</p>
             <!--        STOP HERE-->
         </div>
         <div class="col-md-6">
@@ -54,13 +54,13 @@
                 <tbody>
                 <tr>
                     <td>
-                        <input class="form-control" v-model="input"/>
+                        <input class="form-control" v-model="input" placeholder="has_quant, has_natsci, has_social, has_arts, has_history"/>
                     </td>
                     <td>
                         <input class="form-control"/>
                     </td>
                     <td>
-                        <input class="form-control" v-bind:value="algorithm(...input.split(','))" disabled/>
+                        <input class="form-control" v-bind:value="algorithm(input)" disabled/>
                     </td>
                 </tr>
                 <tr>
@@ -86,8 +86,10 @@
         methods: {
             <!--        START ADDING YOUR CODE HERE-->
             // Please do not change the name of this function
-            algorithm(grade, talked_to_prof) {
-                return !!(grade >= 50 || talked_to_prof === "true");
+            algorithm(input) {
+                var no_space = input.split(' ').join('').toLowerCase();
+                var array_input = no_space.split(',');
+                return !!(array_input[0] == "true" || array_input[1] == "true" || array_input[2] || "true" && array_input[3] || "true" || array_input[4] || "true");
             }
             <!--        STOP HERE-->
         }
