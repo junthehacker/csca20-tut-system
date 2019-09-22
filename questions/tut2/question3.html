@@ -1,0 +1,59 @@
+<!--This is the template where you write your questions. You have access to a few libraries:-->
+<!--This is for type A question, which should include an area to explain errors and an area to write fixed algorithm.-->
+<!--* jQuery-->
+<!--* Vue.js-->
+<!--Everything must run within the same page. Do not redirect or link to anywhere else.-->
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Question Demo</title>
+    <style>
+        .answer-textarea {
+            height: calc(100vh - 130px) !important;
+        }
+        .control-bar {
+            padding-top: 15px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container pt-2">
+    <!--        START ADDING YOUR CODE HERE-->
+    <h1>Question 3</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <h5>Inputs</h5>
+            <p>age (integer 0-100), is_member (boolean), points on the card (integers 1-100000), day of the week (String).</p>
+            <h5>Outputs</h5>
+            <p>can_vote (boolean)</p>
+            <h5>Expected Behaviour</h5>
+            <p>Return the movie ticket price for the corresponding input.</p>
+            <p>- Customers age 14 and up are charged $15 base per ticket, while anyone younger is charged $10 base.</p>
+            <p>- Discounts can be applied using a card (100 points per dollar), up to a minimum price of $10. </p>
+            <p>- Members can receive a 10% discount on top of the previous discount but only on weekends. </p>
+        </div>
+        <div class="col-md-6">
+            <h3>Your Answer</h3>
+            <textarea class="form-control answer-textarea">
+# How will you divide the tests into multiple areas?
+
+# How many tests do you need to thoroughly test this program? Describe them.</textarea>
+        </div>
+    </div>
+
+    <!--        STOP HERE-->
+    <div class="control-bar">
+        <button class="btn btn-primary">Submit</button>
+    </div>
+</div>
+
+</body>
+</html>
