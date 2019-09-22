@@ -31,13 +31,19 @@
     <div class="row">
         <div class="col-md-6">
             <!--        START ADDING YOUR DESCRIPTION HERE-->
-            <h1>Question 7</h1>
             <h5>Input</h5>
             <p> has_quant, has_natsci, has_social, has_arts, has_history (booleans)</p>
             <h5>Output</h5>
             <p>has_all (boolean)</p>
             <h5>Behaviour</h5>
             <p>Return true if and only if a person has all the required breadth requirements.</p>
+            <script>
+                function algorithm(input) {
+                    var no_space = input.split(' ').join('').toLowerCase();
+                    var array_input = no_space.split(',');
+                    return !!(array_input[0] === "true" || array_input[1] === "true" || array_input[2] || "true" && array_input[3] || "true" || array_input[4] || "true");
+                }
+            </script>
             <!--        STOP HERE-->
         </div>
         <div class="col-md-6">

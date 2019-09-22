@@ -31,7 +31,6 @@
     <div class="row">
         <div class="col-md-6">
             <!--        START ADDING YOUR DESCRIPTION HERE-->
-            <h1>Question 8</h1>
             <h5>Input</h5>
             <p>num_slices (integer >= 0), num_people(integer > 0)</p>
             <h5>Output</h5>
@@ -40,6 +39,21 @@
             <p>Return the number of slices per person given the number of people
                who want pizza and the slices available, a person can only get full slices.
                If there is not enough pizza, return: "Not enough pizza!"</p>
+            <script>
+                function algorithm(input) {
+                    var no_space = input.split(' ').join('').toLowerCase();
+                    var array_input = no_space.split(',');
+                    var output;
+                    if (array_input[0] < array_input[1]) {
+                        output = "Not enough pizza!"
+                    } else if (input == "") {
+                        output = "";
+                    } else {
+                        output = Math.floor(array_input[0]/array_input[1]);
+                    }
+                    return output;
+                }
+            </script>
             <!--        STOP HERE-->
         </div>
         <div class="col-md-6">

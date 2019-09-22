@@ -31,7 +31,6 @@
     <div class="row">
         <div class="col-md-6">
             <!--        START ADDING YOUR DESCRIPTION HERE-->
-            <h1>Question 9</h1>
             <h5>Input</h5>
             <p> number (integer)</p>
             <h5>Output</h5>
@@ -41,6 +40,23 @@
             <p>- If a number is multiple of 3, return "Fizz"</p>
             <p>- If a number is multiple of 5, return "Buzz"</p>
             <p>- If a number is a multiple of 15, return "FizzBuzz"</p>
+            <script>
+                function algorithm(input) {
+                    var output;
+                    if (input == ""){
+                        output = "";
+                    } else if (input%3 == 0) {
+                        output = "Fizz"
+                    } else if (input%15 == 0) {
+                        output = "FizzBuzz";
+                    } else if (input%5 == 0){
+                        output = "Buzz";
+                    } else {
+                        output = "Nothing";
+                    }
+                    return output;
+                }
+            </script>
             <!--        STOP HERE-->
         </div>
         <div class="col-md-6">

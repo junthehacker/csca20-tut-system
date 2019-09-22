@@ -31,7 +31,6 @@
     <div class="row">
         <div class="col-md-6">
             <!--        START ADDING YOUR DESCRIPTION HERE-->
-            <h1>Question 10</h1>
             <h5>Input</h5>
             <p>grade (integer 0-100), Submission date (yyyy-mm-dd), deadline (yyyy-mm-dd)</p>
             <h5>Output</h5>
@@ -42,6 +41,29 @@
             <p>- If two day late, -20%  </p>
             <p>- If three day late, -30%  </p>
             <p>- If more than three days late, -100% </p>
+            <script>
+                function algorithm(input) {
+                    var no_space = input.split(' ').join('').toLowerCase();
+                    var array_input = no_space.split(',');
+                    if (input == "") {
+                        return "";
+                    }
+                    var final_grade = array_input[0];
+                    var sDate = array_input[1].split('-');
+                    var dDate = array_input[2].split('-');
+                    var diff = sDate[2] - dDate[2];
+                    if (diff == -1){
+                        final_grade = final_grade - (final_grade * 0.1);
+                    } else if (diff == -2){
+                        final_grade = final_grade - (final_grade * 0.2);
+                    } else if (diff == -3){
+                        final_grade = final_grade - (final_grade * 0.3);
+                    } else if (diff < -3){
+                        final_grade = 0;
+                    }
+                    return final_grade;
+                }
+            </script>
             <!--        STOP HERE-->
         </div>
         <div class="col-md-6">
