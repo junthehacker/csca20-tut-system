@@ -32,7 +32,7 @@
         <div class="col-md-6">
             <!--        START ADDING YOUR DESCRIPTION HERE-->
             <h5>Input</h5>
-            <p>grade (integer 0-100), Submission date (yyyy-mm-dd), deadline (yyyy-mm-dd)</p>
+            <p>grade (integer 0-100), submission_date (yyyy-mm-dd), deadline (yyyy-mm-dd)</p>
             <h5>Output</h5>
             <p> grade_with_penalty (integer 0-100)</p>
             <h5>Behaviour</h5>
@@ -80,13 +80,13 @@
                 <tbody>
                 <tr>
                     <td>
-                        <input class="form-control" v-model="input"/>
+                        <input class="form-control" v-model="input" placeholder="grade, submission_date, deadline"/>
                     </td>
                     <td>
                         <input class="form-control"/>
                     </td>
                     <td>
-                        <input class="form-control" v-bind:value="algorithm(input)" disabled/>
+                        <input class="form-control" v-bind:value="algsorithm(input)" disabled/>
                     </td>
                 </tr>
                 <tr>
