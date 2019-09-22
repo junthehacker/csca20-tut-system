@@ -22,12 +22,12 @@
                     var no_space = input.split(' ').join('').toLowerCase();
                     var array_input = no_space.split(',');
                     var output;
-                    if (array_input[0] < array_input[1]) {
+                    if (parseInt(array_input[0],10) < parseInt(array_input[1],10)) {
                         output = "Not enough pizza!"
                     } else if (input == "") {
                         output = "";
                     } else {
-                        output = Math.floor(array_input[0]/array_input[1]);
+                        output = Math.floor(parseInt(array_input[0],10)/parseInt(array_input[1],10));
                     }
                     return output;
                 }
