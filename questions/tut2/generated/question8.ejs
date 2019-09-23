@@ -10,7 +10,7 @@
             <h3>Question</h3>
 
             <h5>Input</h5>
-            <p>num_slices (integer >= 0), num_people(integer > 0)</p>
+            <p>num_slices (integer >= 0), num_people(integer >= 0)</p>
             <h5>Output</h5>
             <p>slices per people</p>
             <h5>Behaviour</h5>
@@ -22,8 +22,10 @@
                     var no_space = input.split(' ').join('').toLowerCase();
                     var array_input = no_space.split(',');
                     var output;
-                    if (parseInt(array_input[0],10) < parseInt(array_input[1],10)) {
-                        output = "Not enough pizza!"
+                    if (parseInt(array_input[1],10) == 0) {
+                        output = array_input[0];
+                    } else if (parseInt(array_input[0],10) < parseInt(array_input[1],10)) {
+                        output = "Not enough pizza!";
                     } else if (input == "") {
                         output = "";
                     } else {
