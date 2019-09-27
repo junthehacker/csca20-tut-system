@@ -1,0 +1,46 @@
+<% include ../partials/head.ejs %>
+
+<div class="container pt-2">
+
+    <% if(user.groups.indexOf("admin") >= 0) { %>
+        <a href="<%= absRoute('/admin') %>">Admin Panel</a>
+    <% } %>
+
+    <h1>Lab 3</h1>
+    <p>This activity must be completed in pairs, so if you don't have a teammate yet, go find one!</p>
+
+    <% if(!session) { %>
+        <h4>Create a Pair</h4>
+        <p>You will need your friend's UTORid to create a pair. Your UTORid is <b><%= user.username %></b>.</p>
+        <p>Please enter your friend's UTORid below:</p>
+        <form method="post">
+            <input type="text" placeholder="UTORid" name="username" class="form-control"/>
+            <br/>
+            <button class="btn btn-primary">Create Pair!</button>
+        </form>
+    <% } else { %>
+
+        <h4>Your Team Information</h4>
+        <p>Members: <%= session.username1 %>, <%= session.username2 %></p>
+
+        <a href="<%= absRoute('/tut3/questions') %>">
+            <button class="btn btn-primary">Proceed to Activity</button>
+        </a>
+
+
+        <br/><br/><br/><br/><br/><br/>
+
+        <hr/>
+
+        <form method="post" action="<%= absRoute('/tut3/leave') %>">
+            <button class="btn btn-danger btn-sm">Leave Team</button>
+            <br/>
+            <small>WARNING: Once you leave your team, all answers submitted will be destroyed, only use this feature if you
+                really wish to switch teams.</small>
+        </form>
+
+    <% } %>
+
+</div>
+
+<% include ../partials/foot.ejs %>
