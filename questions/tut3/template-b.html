@@ -100,7 +100,7 @@
                             <button class="btn btn-secondary" v-on:click="deleteTestCase(testCase)">&times;</button>
                         </td>
                         <td>
-                            <span v-if="runAlgorithm(testCase.input) === testCase.expectedOutput">✅</span>
+                            <span v-if="runAlgorithm(testCase.input) == testCase.expectedOutput">✅</span>
                         </td>
                     </tr>
                 </template>
