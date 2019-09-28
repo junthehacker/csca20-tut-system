@@ -1,0 +1,126 @@
+<!--This is the template where you write your questions. You have access to a few libraries:-->
+<!--This is for type A question, which should include an area to explain errors and an area to write fixed algorithm.-->
+<!--* jQuery-->
+<!--* Vue.js-->
+<!--Everything must run within the same page. Do not redirect or link to anywhere else.-->
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Question Demo</title>
+    <style>
+        .control-bar {
+            padding-top: 15px;
+            text-align: right;
+        }
+
+        .question-image {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .error-label {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    // START YOUR QUESTION CONFIG HERE
+    const QUESTION_CONFIGURATION = {
+        description: `
+            <h5>Question 6</h5>
+            <p>
+                Given the age, check if a person is allowed to vote. Please enter your inputs in the following order, if there are multiple inputs, separate them using comma:
+            </p>
+            <ul>
+                <li>age - integer >= 0</li>
+            </ul>
+        `,
+        image: "https://i.imgur.com/AdswJH7.png",
+        inputs: [
+            // You put a list of input types here, available types are:
+            // float, integer, boolean, string
+            'integer',
+        ],
+        // You don't have to parse the input, they will be given to you with the correct type defined above.
+        // In this case, only one input is defined with type integer.
+        algorithm(age) {
+          if ((age == 18) && (age > 18)){
+            return "You can vote!";
+          } else {
+            return "You cannot vote :(";
+          }
+
+        }
+    };
+    // END HERE
+</script>
+
+<div class="container-fluid pt-2" id="app">
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <div v-html="questionConfig.description"></div>
+            <img v-bind:src="questionConfig.image" alt="question" class="question-image"/>
+        </div>
+        <div class="col-md-6">
+            <h3>Test Cases</h3>
+            <p>Please separate multiple inputs using comma.</p>
+            <table class="table table-borderless table-sm">
+                <thead>
+                <tr>
+                    <th scope="col">Input</th>
+                    <th scope="col">Expected Output</th>
+                    <th scope="col">Actual Output</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <template v-for="testCase in testCases">
+                    <tr v-if="!getParsedInput(testCase.input)">
+                        <td colspan="4">
+                            <small class="error-label">Invalid input.</small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="form-control" v-model="testCase.input" />
+                        </td>
+                        <td>
+                            <input class="form-control" v-model="testCase.expectedOutput"/>
+                        </td>
+                        <td>
+                            <input class="form-control" disabled v-bind:value="runAlgorithm(testCase.input)"/>
+                        </td>
+                        <td>
+                            <button class="btn btn-secondary" v-on:click="deleteTestCase(testCase)">&times;</button>
+                        </td>
+                        <td>
+                            <span v-if="runAlgorithm(testCase.input) == testCase.expectedOutput">✅</span>
+                        </td>
+                    </tr>
+                </template>
+                <tr>
+                    <td colspan="3">
+                        <button class="btn btn-secondary" v-on:click="addTestCase()">Add Test Case</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="template-b.js"></script>
+
+</body>
+</html>
