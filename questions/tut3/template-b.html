@@ -45,8 +45,11 @@
         `,
         image: "https://i.imgur.com/bJGqHFZ.png",
         inputs: [
+            // You put a list of input types here, available types are:
+            // float, integer, boolean, string
             'integer',
         ],
+        // You don't have to parse the input, they will be given to you with the correct type defined above.
         algorithm(myNum) {
             return myNum * 2;
         }
