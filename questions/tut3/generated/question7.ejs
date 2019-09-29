@@ -1,0 +1,47 @@
+
+<!-- This is generated code, please do not change!!! -->
+<% include ../partials/head.ejs %>
+
+<div class="container-fluid pt-2">
+    <% include ../partials/questionNav.ejs %>
+    <% include ../partials/pairSessionInfo.ejs %>
+</div>
+
+<script>
+
+    const QUESTION_CONFIGURATION = {
+        description: `
+            <h5>Question 7</h5>
+            <p>
+                Check if a number is divisible by 6. Please enter your inputs in the following order, if there are multiple inputs, separate them using comma:
+            </p>
+            <ul>
+                <li>my_num - integer</li>
+            </ul>
+        `,
+        image: "https://i.imgur.com/nCRCixP.png",
+        inputs: [
+            // You put a list of input types here, available types are:
+            // float, integer, boolean, string
+            'integer',
+        ],
+        // You don't have to parse the input, they will be given to you with the correct type defined above.
+        // In this case, only one input is defined with type integer.
+        algorithm(my_num) {
+          if (my_num%3 == 0){
+            return "No";
+          } else {
+            if (my_num%2 == 0){
+              return "Yes";
+            }
+            return "No";
+          }
+
+        }
+    };
+    
+</script>
+
+<% include partials/answerSectionB.ejs %>
+
+<% include ../partials/foot.ejs %>

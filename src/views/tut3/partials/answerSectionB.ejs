@@ -1,0 +1,84 @@
+<style>
+    .error {
+        background-color: rgba(216,197,6,0.39);
+    }
+    .question-image {
+        width: 100%;
+        max-width: 500px;
+    }
+</style>
+
+<div class="container-fluid pt-2" id="app">
+
+    <div class="row">
+        <div class="col-md-6">
+            <div v-html="questionConfig.description"></div>
+            <img v-bind:src="questionConfig.image" alt="question" class="question-image"/>
+        </div>
+        <div class="col-md-6">
+            <h3>Test Cases</h3>
+            <p>Please separate multiple inputs using comma.</p>
+            <table class="table table-borderless table-sm">
+                <thead>
+                <tr>
+                    <th scope="col">Input</th>
+                    <th scope="col">Expected Output</th>
+                    <th scope="col">Actual Output</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <template v-for="testCase in testCases">
+                    <tr v-if="!getParsedInput(testCase.input)" class="error">
+                        <td colspan="5">
+                            <small class="error-label">Invalid input.</small>
+                        </td>
+                    </tr>
+                    <tr v-if="runAlgorithm(testCase.input) != testCase.expectedOutput" class="error">
+                        <td colspan="5">
+                            <small class="error-label">Actual output differs from expected.</small>
+                        </td>
+                    </tr>
+                    <tr v-bind:class="{ error: runAlgorithm(testCase.input) != testCase.expectedOutput }">
+                        <td>
+                            <input class="form-control" v-model="testCase.input" />
+                        </td>
+                        <td>
+                            <input class="form-control" v-model="testCase.expectedOutput"/>
+                        </td>
+                        <td>
+                            <input class="form-control" disabled v-bind:value="runAlgorithm(testCase.input)"/>
+                        </td>
+                        <td>
+                            <button class="btn btn-secondary" v-on:click="deleteTestCase(testCase)">&times;</button>
+                        </td>
+                        <td>
+                            <span v-if="runAlgorithm(testCase.input) == testCase.expectedOutput">✅</span>
+                        </td>
+                    </tr>
+                </template>
+                <tr>
+                    <td colspan="3">
+                        <button class="btn btn-secondary" v-on:click="addTestCase()">Add Test Case</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <form>
+
+            </form>
+            <hr/>
+            <form method="post">
+                <input type="hidden" name="response" v-bind:value="getSaveData()" />
+                <button class="btn btn-primary">Save &amp; Go Back</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    const EXISTING_RESPONSE = <%- response ? response : "null" %>;
+</script>
+
+<script src="<%= absRoute('/js/tut3/type-b.js') %>"></script>

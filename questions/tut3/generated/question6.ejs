@@ -1,0 +1,44 @@
+
+<!-- This is generated code, please do not change!!! -->
+<% include ../partials/head.ejs %>
+
+<div class="container-fluid pt-2">
+    <% include ../partials/questionNav.ejs %>
+    <% include ../partials/pairSessionInfo.ejs %>
+</div>
+
+<script>
+
+    const QUESTION_CONFIGURATION = {
+        description: `
+            <h5>Question 6</h5>
+            <p>
+                Given the age, check if a person is allowed to vote. Please enter your inputs in the following order, if there are multiple inputs, separate them using comma:
+            </p>
+            <ul>
+                <li>age - integer >= 0</li>
+            </ul>
+        `,
+        image: "https://i.imgur.com/AdswJH7.png",
+        inputs: [
+            // You put a list of input types here, available types are:
+            // float, integer, boolean, string
+            'integer',
+        ],
+        // You don't have to parse the input, they will be given to you with the correct type defined above.
+        // In this case, only one input is defined with type integer.
+        algorithm(age) {
+          if ((age == 18) && (age > 18)){
+            return "You can vote!";
+          } else {
+            return "You cannot vote :(";
+          }
+
+        }
+    };
+    
+</script>
+
+<% include partials/answerSectionB.ejs %>
+
+<% include ../partials/foot.ejs %>

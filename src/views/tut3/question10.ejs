@@ -1,0 +1,49 @@
+
+<!-- This is generated code, please do not change!!! -->
+<% include ../partials/head.ejs %>
+
+<div class="container-fluid pt-2">
+    <% include ../partials/questionNav.ejs %>
+    <% include ../partials/pairSessionInfo.ejs %>
+</div>
+
+<script>
+
+    const QUESTION_CONFIGURATION = {
+        description: `
+            <h5>Question 10</h5>
+            <p>
+                Find two numbers that are not equal or divisible by 5 such that their sum is greater than 25 and their product is less than 500. If the numbers are not, then return “Try again!”. Please enter your inputs in the following order, if there are multiple inputs, separate them using comma:
+            </p>
+            <ul>
+                <li>num1 - integer</li>
+                <li>num2 - integer</li>
+            </ul>
+        `,
+        image: "https://i.imgur.com/QaEcZFj.png",
+        inputs: [
+            // You put a list of input types here, available types are:
+            // float, integer, boolean, string
+            'integer',
+            'integer',
+        ],
+        // You don't have to parse the input, they will be given to you with the correct type defined above.
+        // In this case, only one input is defined with type integer.
+        algorithm(num1, num2) {
+          if ((num1 + num2) > 25 && (num1 * num2) < 500) {
+            return "Found them!";
+            if (!(num1 == num2)) {
+              return "Sorry, the numbers cannot be equal. Try again!";
+              if ((num1%5 == 0) && (num2%5 == 0)){
+                return "Sorry, the numbers cannot be divisible by 5. Try again!";
+              }
+            }
+          }
+        }
+    };
+    
+</script>
+
+<% include partials/answerSectionB.ejs %>
+
+<% include ../partials/foot.ejs %>

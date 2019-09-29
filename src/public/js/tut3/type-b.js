@@ -2,7 +2,7 @@ const app = new Vue({
     el: '#app',
     data: {
         questionConfig: QUESTION_CONFIGURATION,
-        testCases: [],
+        testCases: EXISTING_RESPONSE ? EXISTING_RESPONSE : [],
     },
     methods: {
         getParsedInput(input) {
@@ -63,4 +63,5 @@ const app = new Vue({
             return JSON.stringify(this.testCases);
         }
     }
+
 });
