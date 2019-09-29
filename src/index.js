@@ -21,6 +21,7 @@ app.set('views', path.join(__dirname, '/views'));
 app.use(session({secret: 'keyboard cat', name: "csca20.sid"}));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.get(absRoute('/admin'), [ensureAuthenticated, async (req, res) => {
     if (req.user.groups.indexOf("admin") < 0) {

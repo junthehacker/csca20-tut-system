@@ -1,0 +1,26 @@
+<% include ../partials/head.ejs %>
+
+<div class="container pt-2 pb-2">
+    <a href="<%= absRoute("/tut3") %>">Back</a>
+    <br/>
+    <% include ../partials/pairSessionInfo.ejs %>
+    <h1>Lab 3</h1>
+    <% for(let i = 0; i < questions.length; i++) { %>
+        <div>
+            <hr/>
+            <div>
+                <h4><%= questions[i].title %></h4>
+                <% if(session.getResponse(i)){ %>
+                    <pre><code><%= session.getResponse(i) %></code></pre>
+                <% } else { %>
+                    <span class="badge badge-pill badge-warning">No Answer</span>
+                <% } %>
+            </div>
+            <a href="<%= absRoute(`/tut3/questions/${i}`) %>">
+                <button class="btn btn-primary">Go</button>
+            </a>
+        </div>
+    <% } %>
+</div>
+
+<% include ../partials/foot.ejs %>
