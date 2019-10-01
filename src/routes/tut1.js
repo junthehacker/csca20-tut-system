@@ -41,7 +41,7 @@ module.exports = function (app) {
         app.get(absRoute('/tut1/questions/' + i), [ensureAuthenticated, withErrorHandler(async (req, res) => {
             const session = await PairSessionService.getOneByUsernameAndActivityName(req.user.username, ACTIVITY_NAME);
             if (!session) return res.redirect(absRoute('/tut1'));
-            res.render(question.path, {session, question, absRoute, response: JSON.parse(session.responses)[i]});
+            res.render(question.path, {session, question, absRoute, response: JSON.parse(session.responses)[i], activityName: 'tut1'});
         })]);
 
         app.post(absRoute('/tut1/questions/' + i), [ensureAuthenticated, withErrorHandler(async (req, res) => {

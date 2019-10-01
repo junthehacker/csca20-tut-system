@@ -38,16 +38,20 @@ app.get(absRoute(`/admin/:sessionId`), [ensureAuthenticated, async (req, res) =>
     res.render('adminAnswers', {user: req.user, sessions: await PairSessionService.getAll(), absRoute, session});
 }]);
 
+app.get(absRoute(`/labs`), [ensureAuthenticated, async (req, res) => {
+    res.render('labs', {absRoute});
+}]);
+
 // IA
 app.get(absRoute('/ia/assert'), withErrorHandler(async (req, res) => {
     req.session.iaToken = req.query.token;
-    res.redirect(absRoute('/tut3'));
+    res.redirect(absRoute('/labs'));
 }));
 
 // Bind routes
-// require('./routes/tut0')(app);
-// require('./routes/tut1')(app);
-// require('./routes/tut2')(app);
+require('./routes/tut0')(app);
+require('./routes/tut1')(app);
+require('./routes/tut2')(app);
 require('./routes/tut3')(app);
 
 app.listen(process.env.PORT, () => {
