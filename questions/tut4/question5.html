@@ -1,0 +1,125 @@
+<!--This is the template where you write your questions. You have access to a few libraries:-->
+<!--This is for type A question, which should include an area to explain errors and an area to write fixed algorithm.-->
+<!--* jQuery-->
+<!--* Vue.js-->
+<!--Everything must run within the same page. Do not redirect or link to anywhere else.-->
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Question Template A</title>
+    <style>
+        .answer-textarea {
+            height: calc(100vh - 130px) !important;
+        }
+
+        .control-bar {
+            padding-top: 15px;
+            text-align: right;
+        }
+
+        .question-image {
+            max-width: 100%;
+        }
+
+        .code-block {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .correct-line {
+            font-family: monospace;
+            font-size: 16px;
+            background-color: rgba(10, 247, 3, 0.19);
+        }
+    </style>
+</head>
+<body>
+
+<script>
+
+    // START YOUR QUESTION CONFIG HERE
+    const QUESTION_CONFIGURATION = {
+        name: "Question 5",
+        image: "https://i.imgur.com/2j7ilGJ.png",
+        subsections: [
+            {
+                description: "Let my_num = 2. Enter in order the elements of the list that Scratch will say",
+                answer: [
+                    "4",
+                    "1",
+                    "2",
+                    "1",
+                ]
+            },
+            {
+                description: "Let my_num = 3. Enter in order the elements of the list that Scratch will say",
+                answer: [
+                    "3",
+                    "1",
+                    "1",
+                ]
+            }
+        ]
+    };
+    // END HERE
+
+</script>
+
+<div class="container pt-2" id="app">
+
+    <h1>{{ questionConfig.name }}</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <img v-bind:src="questionConfig.image" alt="question" class="question-image"/>
+        </div>
+        <div class="col-md-6">
+            <h3>Trace the Program</h3>
+            <ul class="nav nav-tabs">
+                <li class="nav-item" v-for="section, key in questionConfig.subsections">
+                    <a class="nav-link"
+                       v-bind:class="{ active: currentSection === key }"
+                       v-on:click="currentSection = key"
+                       href="javascript:void(0)"
+                    >
+                        Part {{ key + 1 }}
+                        <span v-if="getAnswer(key).length === section.answer.length"> ✅ </span>
+                    </a>
+                </li>
+            </ul>
+            <small v-if="failedAttempts[currentSection]">Total failed attempts {{ failedAttempts[currentSection] }}</small>
+            <p class="pt-2">{{ questionConfig.subsections[currentSection].description }}</p>
+            <div class="code-block">
+                <div class="correct-line" v-for="line in getAnswer(currentSection)">{{ line }}</div>
+            </div>
+            <div class="alert alert-danger" role="alert" v-if="hasError">
+                That was not quite right... try again.
+                <button type="button" class="close" v-on:click="hasError = false" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="input-group"
+                 v-if="getAnswer(currentSection).length !== questionConfig.subsections[currentSection].answer.length">
+                <input type="text" class="form-control" v-model="currentLine" v-on:keyup.enter="submitCurrentLine()"
+                       placeholder="Next line of output...">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary" v-on:click="submitCurrentLine()" type="button">Enter</button>
+                </div>
+            </div>
+            <div class="alert alert-success"
+                 v-if="getAnswer(currentSection).length === questionConfig.subsections[currentSection].answer.length" role="alert">
+                You have completed the part!
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="template-a.js"></script>
+
+</body>
+</html>
