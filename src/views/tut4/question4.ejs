@@ -1,0 +1,40 @@
+
+<!-- This is generated code, please do not change!!! -->
+<% include ../partials/head.ejs %>
+
+<div class="container pt-2">
+    <% include ../partials/questionNav.ejs %>
+    <% include ../partials/pairSessionInfo.ejs %>
+</div>
+
+<script>
+
+    const QUESTION_CONFIGURATION = {
+        name: "Question 4",
+        image: "https://i.imgur.com/g1mjHRE.png",
+        subsections: [
+            {
+                description: "Let answer = HELLO. Enter what Scratch will say, in the order in what it will be said.",
+                answer: [
+                    "H",
+                    "L",
+                ]
+            },
+            {
+                description: "Let answer = HELLOHELLO. Enter what Scratch will say, in the order in what it will be said.",
+                answer: [
+                    "H",
+                    "L",
+                    "A",
+                    "O",
+                    "E",
+                ]
+            }
+        ]
+    };
+    
+</script>
+
+<% include partials/answerSection.ejs %>
+
+<% include ../partials/foot.ejs %>

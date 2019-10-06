@@ -1,0 +1,30 @@
+
+<!-- This is generated code, please do not change!!! -->
+<% include ../partials/head.ejs %>
+
+<div class="container pt-2">
+    <% include ../partials/questionNav.ejs %>
+    <% include ../partials/pairSessionInfo.ejs %>
+</div>
+
+<script>
+
+    const QUESTION_CONFIGURATION = {
+        name: "Question 6",
+        scratchLink: "https://scratch.mit.edu/projects/333048551/",
+        description: `
+            <ul>
+                <li>Input: A string word and a natural number n</li>
+                <li>Output: A single character.</li>
+            </ul>
+            <p>
+                Return the nth character in word. For example, if word = programming and n = 3, then we would return ‘o’. The word wraps around if n > len(word). For example, If word = cat and n = 5, then we would return ‘a’.
+            </p>
+        `
+    };
+    
+</script>
+
+<% include partials/answerSectionB.ejs %>
+
+<% include ../partials/foot.ejs %>

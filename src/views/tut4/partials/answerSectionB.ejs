@@ -1,0 +1,17 @@
+<div class="container pt-2" id="app">
+    <h1>{{ questionConfig.name }}</h1>
+
+    <p>
+        Carefully read the description below, and fix the program on Scratch. When you open the project, click on "Remix" to copy the project into your account and fix the changes there.
+    </p>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div v-html="questionConfig.description"></div>
+        </div>
+    </div>
+
+    <a v-bind:href="questionConfig.scratchLink" target="_blank" class="btn btn-primary">Go to Scratch</a>
+</div>
+
+<script src="<%= absRoute('/static/js/tut4/type-b.js') %>"></script>

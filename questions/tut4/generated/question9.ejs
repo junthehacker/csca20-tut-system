@@ -1,0 +1,30 @@
+
+<!-- This is generated code, please do not change!!! -->
+<% include ../partials/head.ejs %>
+
+<div class="container pt-2">
+    <% include ../partials/questionNav.ejs %>
+    <% include ../partials/pairSessionInfo.ejs %>
+</div>
+
+<script>
+
+    const QUESTION_CONFIGURATION = {
+        name: "Question 9",
+        scratchLink: "https://scratch.mit.edu/projects/333484885/",
+        description: `
+            <ul>
+                <li>Input: Two natural numbers num1 and num2</li>
+                <li>Output: A string message.</li>
+            </ul>
+            <p>
+              Find two numbers that are not equal or divisible by 5 such that their sum is greater than 25 and their product is less than 500. If you find the numbers, return "Found them!", if the numbers are not, then return “Try again!”
+            </p>
+        `
+    };
+    
+</script>
+
+<% include partials/answerSectionB.ejs %>
+
+<% include ../partials/foot.ejs %>
