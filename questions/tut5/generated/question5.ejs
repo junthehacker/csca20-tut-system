@@ -1,0 +1,34 @@
+
+<!-- This is generated code, please do not change!!! -->
+<% include ../partials/head.ejs %>
+
+<div class="container pt-2">
+    <% include ../partials/questionNav.ejs %>
+    <% include ../partials/pairSessionInfo.ejs %>
+</div>
+
+<script>
+
+    const QUESTION_CONFIGURATION = {
+        name: "Question 5",
+        scratchLink: "https://scratch.mit.edu/projects/336014863",
+        description: `
+            <p>UTSC needs to come up with a new set of utorids for new and existing students. The way that they will be generated is based on the student’s first name, last name, age and year of enrolment. </p>
+            <ul>
+                <li>If the student’s age is odd, we will take as base the first 2 letters of their last name followed by the last 3 letters of their first name.</li>
+                <li>If the student’s age is even, we will take as base the first 3 letters of their first name followed by the last 2 letters of their last name.</li>
+                <li>more than 7 days late: $3 per day (for all days, including the first 7 days)</li>
+            </ul>
+            <p>At the end, we need to add a number which is the year of enrolment minus the length of the first name, modulus the length of the last name (i.e. (year - length(first_name))mod(length (last_name)))</p>
+            <ul>
+                <li>Input: first_name, last_name, age, year</li>
+                <li>Output: utorid</li>
+            </ul>
+        `
+    };
+    
+</script>
+
+<% include partials/answerSectionB.ejs %>
+
+<% include ../partials/foot.ejs %>

@@ -1,0 +1,41 @@
+
+<!-- This is generated code, please do not change!!! -->
+<% include ../partials/head.ejs %>
+
+<div class="container pt-2">
+    <% include ../partials/questionNav.ejs %>
+    <% include ../partials/pairSessionInfo.ejs %>
+</div>
+
+<script>
+
+    const QUESTION_CONFIGURATION = {
+        name: "Question 4",
+        scratchLink: "https://scratch.mit.edu/projects/336020010",
+        description: `
+            <p>A library charges overdue fees for a borrowed book using the following schedule</p>
+            <ul>
+                <li>Less than 4 days late: $1 per day</li>
+                <li>4 to 7 days late: $2 per day (for all days, including the first 3 days)</li>
+                <li>more than 7 days late: $3 per day (for all days, including the first 7 days)</li>
+            </ul>
+            <p>Borrowers of books are in one of these age groups:</p>
+            <ul>
+                <li>child (less than 12 years old): pays a quarter of the fees</li>
+                <li>student (between 12 and 19 years old): pays half of the fees</li>
+                <li>adult (between 20 and 64 years old): pays the full fee</li>
+                <li>senior (65 years old or older): pays a quarter of the fees</li>
+            </ul>
+            <p>First, implement the two blocks: library_fees and age_discount</p>
+            <ul>
+                <li>Input: days_late, age</li>
+                <li>Output: fee</li>
+            </ul>
+        `
+    };
+    
+</script>
+
+<% include partials/answerSectionB.ejs %>
+
+<% include ../partials/foot.ejs %>

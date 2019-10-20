@@ -1,0 +1,30 @@
+
+<!-- This is generated code, please do not change!!! -->
+<% include ../partials/head.ejs %>
+
+<div class="container pt-2">
+    <% include ../partials/questionNav.ejs %>
+    <% include ../partials/pairSessionInfo.ejs %>
+</div>
+
+<script>
+
+    const QUESTION_CONFIGURATION = {
+        name: "Question 3",
+        scratchLink: "https://scratch.mit.edu/projects/336031946",
+        description: `
+            <p>If the number is less than the length of the word, cut the word at that number and flip the order (i.e. if the word is “hello” and the number 2, return “lohel”). If the number is greater than the length of the word, cut the word at number mod length(word) and flip the order Otherwise, return the word with no change.</p>
+            <p>Implement the block cut_word.</p>
+
+            <ul>
+                <li>Input: word, number</li>
+                <li>Output: new_word</li>
+            </ul>
+        `
+    };
+    
+</script>
+
+<% include partials/answerSectionB.ejs %>
+
+<% include ../partials/foot.ejs %>
