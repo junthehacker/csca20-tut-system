@@ -1,0 +1,33 @@
+
+<!-- This is generated code, please do not change!!! -->
+<% include ../partials/head.ejs %>
+
+<div class="container pt-2">
+    <% include ../partials/questionNav.ejs %>
+    <% include ../partials/pairSessionInfo.ejs %>
+</div>
+
+<script>
+
+    const QUESTION_CONFIGURATION = {
+        name: "Question 2",
+        scratchLink: "https://scratch.mit.edu/projects/338823358",
+        description: `
+            <p>Task: Improve the code without changing the actual functionality.</p>
+
+            <ul>
+                <li>Input: word (string)</li>
+                <li>Output: has_digits, has_symbols, has_vowels</li>
+            </ul>
+
+            <p>
+                Check if the input has at least one digit, one symbol or one vowel. If it has any of these, change the appropriate variable to "Yes", if not, leave it as "No"
+            </p>
+        `
+    };
+    
+</script>
+
+<% include partials/answerSectionB.ejs %>
+
+<% include ../partials/foot.ejs %>

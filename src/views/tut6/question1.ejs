@@ -1,0 +1,36 @@
+
+<!-- This is generated code, please do not change!!! -->
+<% include ../partials/head.ejs %>
+
+<div class="container pt-2">
+    <% include ../partials/questionNav.ejs %>
+    <% include ../partials/pairSessionInfo.ejs %>
+</div>
+
+<script>
+
+    const QUESTION_CONFIGURATION = {
+        name: "Question 1",
+        scratchLink: "https://scratch.mit.edu/projects/338677000",
+        description: `
+            <p>Task: Improve the code without changing the actual functionality.</p>
+
+            <ul>
+                <li>Input: word (string)</li>
+                <li>Output: result (string)</li>
+            </ul>
+
+            <p>
+                If the length of the word is even, return the first five letters (or less, depending on the length) in even index (i.e letters 2, 4,6, 8, 10 of the word).
+            </p>
+            <p>
+                If the length of the word is odd, return the first five letters (or less, depending on the length) in odd index (i.e letters 1, 3, 5, 7, 9 of the word).
+            </p>
+        `
+    };
+    
+</script>
+
+<% include partials/answerSectionB.ejs %>
+
+<% include ../partials/foot.ejs %>

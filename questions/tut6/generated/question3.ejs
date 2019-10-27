@@ -1,0 +1,39 @@
+
+<!-- This is generated code, please do not change!!! -->
+<% include ../partials/head.ejs %>
+
+<div class="container pt-2">
+    <% include ../partials/questionNav.ejs %>
+    <% include ../partials/pairSessionInfo.ejs %>
+</div>
+
+<script>
+
+    const QUESTION_CONFIGURATION = {
+        name: "Question 3",
+        scratchLink: "https://scratch.mit.edu/projects/338839536",
+        description: `
+            <p>Task: Implement the block valid_course with the specifications below.</p>
+
+            <ul>
+                <li>Input: course code (string)</li>
+                <li>Output: If the input has a valid UTSC course code format say VALID! Else, say NOT VALID!</li>
+            </ul>
+
+            <p>Hint - You should verify the following:</p>
+            <ul>
+                <li>Length of the input</li>
+                <li>Format (4 letters + 2 digits)</li>
+                <li>Level of the course (what are the only possible levels?)</li>
+            </ul>
+            <p>
+                *Note* We just need to check if the input follows the format of UTSC course codes, we don't need to check if the course actually exists.
+            </p>
+        `
+    };
+    
+</script>
+
+<% include partials/answerSectionB.ejs %>
+
+<% include ../partials/foot.ejs %>

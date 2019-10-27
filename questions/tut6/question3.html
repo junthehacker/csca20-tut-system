@@ -1,0 +1,67 @@
+<!--This is the template where you write your questions. You have access to a few libraries:-->
+<!--This is for type A question, which should include an area to explain errors and an area to write fixed algorithm.-->
+<!--* jQuery-->
+<!--* Vue.js-->
+<!--Everything must run within the same page. Do not redirect or link to anywhere else.-->
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Question Template A</title>
+</head>
+<body>
+
+<script>
+
+    // START YOUR QUESTION CONFIG HERE
+    const QUESTION_CONFIGURATION = {
+        name: "Question 3",
+        scratchLink: "https://scratch.mit.edu/projects/338839536",
+        description: `
+            <p>Task: Implement the block valid_course with the specifications below.</p>
+
+            <ul>
+                <li>Input: course code (string)</li>
+                <li>Output: If the input has a valid UTSC course code format say VALID! Else, say NOT VALID!</li>
+            </ul>
+
+            <p>Hint - You should verify the following:</p>
+            <ul>
+                <li>Length of the input</li>
+                <li>Format (4 letters + 2 digits)</li>
+                <li>Level of the course (what are the only possible levels?)</li>
+            </ul>
+            <p>
+                *Note* We just need to check if the input follows the format of UTSC course codes, we don't need to check if the course actually exists.
+            </p>
+        `
+    };
+    // END HERE
+
+</script>
+
+<div class="container pt-2" id="app">
+
+    <h1>{{ questionConfig.name }}</h1>
+
+    <p>
+        Carefully read the description below, and fix the program on Scratch. When you open the project, click on "Remix" to copy the project into your account.
+    </p>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div v-html="questionConfig.description"></div>
+        </div>
+    </div>
+    <a v-bind:href="questionConfig.scratchLink" target="_blank" class="btn btn-primary">Go to Scratch</a>
+</div>
+
+<script src="template-b.js"></script>
+
+</body>
+</html>
