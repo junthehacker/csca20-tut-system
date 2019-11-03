@@ -1,0 +1,32 @@
+<div class="container pt-2" id="app">
+
+    <h1>{{ questionConfig.name }}</h1>
+
+    <div class="row">
+        <div class="col-md-12 pb-2">
+            Read through the Scratch code below and re-write it in Python. You may use any editor you want, after you
+            have completed the task, paste your Python code below.
+        </div>
+        <div class="col-md-6">
+            <img v-bind:src="questionConfig.image" alt="Original code" style="max-width: 100%; width: 500px;"/>
+        </div>
+        <div class="col-md-6">
+            <textarea spellcheck="false" class="form-control" style="font-family: monospace; height: 500px;"
+                      placeholder="Enter your Python code here..."
+                      v-model:value="answer"># Paste your Python code below</textarea>
+            <br/>
+            <form method="post">
+                <input type="hidden" v-bind:value="answer" name="response"/>
+                <button class="btn btn-primary">Submit & Go Back</button>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+<script>
+    const EXISTING_RESPONSE = <%- response ? JSON.stringify({response}) : "{response: ''}" %>;
+</script>
+
+<script src="<%= absRoute('/static/js/tut7/app.js') %>"></script>

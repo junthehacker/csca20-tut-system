@@ -1,0 +1,58 @@
+<!--This is the template where you write your questions. You have access to a few libraries:-->
+<!--This is for type A question, which should include an area to explain errors and an area to write fixed algorithm.-->
+<!--* jQuery-->
+<!--* Vue.js-->
+<!--Everything must run within the same page. Do not redirect or link to anywhere else.-->
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Question Template A</title>
+</head>
+<body>
+
+<script>
+
+    // START YOUR QUESTION CONFIG HERE
+    const QUESTION_CONFIGURATION = {
+        name: "Question 3",
+        image: "https://www.evernote.com/l/Aq38YvDxMG1CxoeFP2DatBAEw__uhkfKkuwB/image.png",
+    };
+    // END HERE
+
+</script>
+
+<div class="container pt-2" id="app">
+
+    <h1>{{ questionConfig.name }}</h1>
+
+    <div class="row">
+        <div class="col-md-12 pb-2">
+            Read through the Scratch code below and re-write it in Python. You may use any editor you want, after you
+            have completed the task, paste your Python code below.
+        </div>
+        <div class="col-md-6">
+            <img v-bind:src="questionConfig.image" alt="Original code" style="max-width: 100%; width: 500px;"/>
+        </div>
+        <div class="col-md-6">
+            <textarea spellcheck="false" class="form-control" style="font-family: monospace; height: 500px;" placeholder="Enter your Python code here..." v-model:value="answer"># Paste your Python code below</textarea>
+            <br/>
+            <form method="post">
+                <input type="hidden" v-bind:value="answer" name="answer" />
+                <button class="btn btn-primary">Submit & Go Back</button>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="template.js"></script>
+
+</body>
+</html>

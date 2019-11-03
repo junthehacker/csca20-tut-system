@@ -1,0 +1,31 @@
+<% include ../partials/head.ejs %>
+
+<div class="container pt-2 pb-2">
+    <a href="<%= absRoute("/tut7") %>">Back</a>
+    <br/>
+    <% include ../partials/pairSessionInfo.ejs %>
+    <h1>Lab 7</h1>
+
+    <p>
+        In this lab, you will be presented with a series of Scratch code, and your task is to convert them to Python.<br/>
+        You can use any editor you wish, all lab computers should have Wing101 installed. Once you have finished writing Python code, submit it on this website so you can look back at your answer later.
+    </p>
+    <% for(let i = 0; i < questions.length; i++) { %>
+        <div>
+            <hr/>
+            <div>
+                <h4><%= questions[i].title %></h4>
+                <% if(session.getResponse(i)){ %>
+                    <pre><code><%= session.getResponse(i) %></code></pre>
+                <% } else if (!questions[i].noAnswer) { %>
+                    <span class="badge badge-pill badge-warning">No Answer</span>
+                <% } %>
+            </div>
+            <a href="<%= absRoute(`/tut7/questions/${i}`) %>">
+                <button class="btn btn-primary">Go</button>
+            </a>
+        </div>
+    <% } %>
+</div>
+
+<% include ../partials/foot.ejs %>

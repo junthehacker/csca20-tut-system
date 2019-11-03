@@ -56,6 +56,7 @@ require('./routes/tut3')(app);
 require('./routes/tut4')(app);
 require('./routes/tut5')(app);
 require('./routes/tut6')(app);
+require('./routes/tut7')(app);
 
 app.listen(process.env.PORT, () => {
     console.log(`Application started on port ${process.env.PORT}.`);
