@@ -1,0 +1,16 @@
+Category,Name,Color,Price,Quantity
+clothes,shirt,black,50,89
+clothes,shirt,white,50,111
+clothes,pants,black,60,75
+clothes,pants,grey,60,80
+clothes,socks,black,10,56
+clothes,gloves,black,15,19
+office,notebook,blue,5,49
+office,notebook,black,5,51
+office,notebook,pink,5,54
+office,pencil,,1,120
+office,pen,black,2,92
+office,pen,blue,2,86
+office,marker,black,2,45
+office,marker,blue,2,67
+office,color chalk,,10,15

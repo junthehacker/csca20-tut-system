@@ -1,0 +1,40 @@
+<% include ../partials/head.ejs %>
+
+<div class="container pt-2">
+    <% include ../partials/questionNav.ejs %>
+    <% include ../partials/pairSessionInfo.ejs %>
+</div>
+
+<div class="container pt-2 pb-2" id="app">
+
+    <h1>Lab 8 Problem</h1>
+
+    <div class="row">
+        <div class="col-md-12 pb-2">
+            In this lab, you will learn how to use Python to read/write CSV files. You can download the starter files below, once you have completed the lab, paste your completed lab within the textbox below and submit.
+        </div>
+    </div>
+    <br/>
+    <h3>Starter Files</h3>
+    <a class="btn btn-secondary" href="<%= absRoute('/static/js/tut8/lab8.py') %>" target="_blank">lab8.py</a>
+    <a class="btn btn-secondary" href="<%= absRoute('/static/js/tut8/store_items.csv') %>" target="_blank">store_items.csv</a>
+    <br/><br/>
+    <h3>Submission</h3>
+    <textarea spellcheck="false" class="form-control" style="font-family: monospace; height: 500px;"
+              placeholder="Enter your Python code here..."
+              v-model:value="answer"># Paste your Python code below</textarea>
+    <form method="post">
+        <input type="hidden" v-bind:value="answer" name="response"/>
+        <button class="btn btn-primary">Submit & Go Back</button>
+    </form>
+
+</div>
+
+<script>
+    const EXISTING_RESPONSE = <%- response ? JSON.stringify({response}) : "{response: ''}" %>;
+</script>
+
+<script src="<%= absRoute('/static/js/tut8/app.js') %>"></script>
+
+
+<% include ../partials/foot.ejs %>
