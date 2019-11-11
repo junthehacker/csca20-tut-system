@@ -33,7 +33,7 @@ def write_to_csv(data):
     data.sort(key=lambda k: k[0])
     header = read_csv()[0]
     # Open the file given so we can write on it
-    with open(FILE_NAME, 'w') as writer_file:
+    with open(FILE_NAME, 'w', newline="") as writer_file:
         writer = csv.writer(writer_file)
         # When we write the updated database back on the file, we need to
         # remember to add the header back in as well.
